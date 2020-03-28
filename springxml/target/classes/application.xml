@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<bean id="emp" class="com.capg.springbean.Employee" scope="singleton"> 
+	<property name="eid" value="101" ></property>
+	<property name="ename" value="javeed" ></property>
+	<property name="salary" value="500000" ></property>
+	<property name="address">
+	<bean id="a1" class="com.capg.springbean.Address">
+	<property name="city" value="karimnagar"></property>
+	</bean>
+	</property>
+	
+	<property name="map"> 
+	  <map>
+      <entry key="101" value="java"> </entry>
+	</map>
+	</property>
+	
+	<property name="skills"> 
+	<list>
+	<value>Java</value>
+	<value>Angular</value>
+	<value>Oracle</value>
+	<value>JS</value>
+	</list>
+	</property>
+	<property name="set">
+	<set>
+	<value>0516</value>
+	</set>
+	</property>
+	
+	</bean>
+	
+	<bean id="emp1" class="com.capg.springbean.Employee">
+	<constructor-arg name="eid" value="102"></constructor-arg>
+	<constructor-arg name="ename" value="pavan"></constructor-arg>
+	<constructor-arg name="salary" value="50000"></constructor-arg>
+	</bean>
+	
+	<bean id="addr" class="com.capg.springbean.Address">
+	<property name="city" value="hyderabad"></property>
+	</bean>
+	</beans>
